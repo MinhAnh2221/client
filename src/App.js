@@ -28,11 +28,11 @@ function App() {
                 element={
                   // Kiểm tra nếu route yêu cầu đăng nhập và người dùng chưa đăng nhập
                   route.isPrivate && !accessToken ? (
-                    <Navigate to="/404" replace />
+                    <Navigate to="/" replace />
                   ) :
                     // Kiểm tra nếu route yêu cầu quyền admin và người dùng không phải admin
                     route.isAdmin && !isAdmin ? (
-                      <Navigate to="/404" replace />
+                      <Navigate to="/" replace />
                     ) : (
                       <Fragment>
                         {route.isShowHeader && <DefaultComponent />}
