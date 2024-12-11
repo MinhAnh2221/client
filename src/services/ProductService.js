@@ -1,5 +1,6 @@
 import axios from "axios";
 import { jwtTranslate } from "../ultilis";
+axios.defaults.withCredentials = true;
 export const getAllProduct = async (limit) => {
     let res;
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { jwtTranslate } from "../ultilis";
-
+axios.defaults.withCredentials = true;
 export const getCart = async () => {
 	try {
 		const res = await axios.get(`${process.env.REACT_APP_API_URL}/cart/get-cart`, {
@@ -8,6 +8,7 @@ export const getCart = async () => {
 				"token": `Bearer ${localStorage.getItem("access_token")}`,
 				id: jwtTranslate(localStorage.getItem("access_token"))?.id
 			}
+			
 		}
 		);
 		return res.data;

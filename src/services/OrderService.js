@@ -1,6 +1,6 @@
 import axios from "axios";
 import { jwtTranslate } from "../ultilis";
-
+axios.defaults.withCredentials = true;
 
 const createOrder = async (order) => {
 	const response = await axios.post(`${process.env.REACT_APP_API_URL}/order/create`, order, {
